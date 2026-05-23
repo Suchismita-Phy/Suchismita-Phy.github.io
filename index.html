@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Suchismita Sahoo | High Energy Physics</title>
+<title>Dr. Suchismita Sahoo | Theoretical High Energy Physics</title>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -21,9 +21,7 @@
     --gold: #f0c060;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'Outfit', sans-serif;
     background: var(--bg);
@@ -32,13 +30,11 @@
     overflow-x: hidden;
   }
 
-  /* ── Particle canvas background ── */
   #canvas-bg {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     z-index: 0; pointer-events: none; opacity: 0.35;
   }
 
-  /* ── Nav ── */
   nav {
     position: fixed; top: 0; width: 100%; z-index: 100;
     background: rgba(10,14,26,0.85);
@@ -57,15 +53,12 @@
   .nav-links a {
     font-size: 13px; font-weight: 400;
     color: var(--muted); text-decoration: none;
-    letter-spacing: 0.06em;
-    transition: color 0.2s;
+    letter-spacing: 0.06em; transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--text); }
 
-  /* ── Sections ── */
   section { position: relative; z-index: 1; }
 
-  /* ── Hero ── */
   #hero {
     min-height: 100vh;
     display: flex; align-items: center;
@@ -76,7 +69,7 @@
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
     font-family: 'DM Mono', monospace;
-    font-size: 11px; letter-spacing: 0.18em;
+    font-size: 11px; letter-spacing: 0.15em;
     color: var(--accent3);
     border: 1px solid rgba(0,201,167,0.25);
     padding: 5px 14px; border-radius: 20px;
@@ -85,8 +78,7 @@
   }
   .hero-badge::before {
     content: ''; width: 6px; height: 6px; border-radius: 50%;
-    background: var(--accent3);
-    animation: pulse 2s infinite;
+    background: var(--accent3); animation: pulse 2s infinite;
   }
   @keyframes pulse {
     0%,100% { opacity: 1; transform: scale(1); }
@@ -123,28 +115,14 @@
     text-decoration: none; cursor: pointer; border: none;
     transition: all 0.22s;
   }
-  .btn-primary {
-    background: var(--accent); color: #fff;
-  }
+  .btn-primary { background: var(--accent); color: #fff; }
   .btn-primary:hover { background: #3a7eee; transform: translateY(-1px); }
-  .btn-ghost {
-    background: transparent;
-    border: 1px solid var(--faint);
-    color: var(--text);
-  }
+  .btn-ghost { background: transparent; border: 1px solid var(--faint); color: var(--text); }
   .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-  .hero-visual {
-    flex-shrink: 0;
-    opacity: 0; animation: fadeIn 1.2s 0.5s forwards;
-  }
-  .atom-wrap {
-    width: min(280px, 38vw); height: min(280px, 38vw);
-    position: relative;
-  }
-  .atom-wrap svg { width: 100%; height: 100%; }
+  .hero-visual { flex-shrink: 0; opacity: 0; animation: fadeIn 1.2s 0.5s forwards; }
+  .atom-wrap { width: min(280px, 38vw); height: min(280px, 38vw); position: relative; }
 
-  /* ── Stats bar ── */
   .stats-bar {
     display: flex; flex-wrap: wrap;
     gap: 0; border-top: 1px solid var(--border);
@@ -160,58 +138,41 @@
   .stat-num {
     font-family: 'EB Garamond', serif;
     font-size: 2.6rem; font-weight: 500;
-    color: var(--accent); line-height: 1;
-    margin-bottom: 0.3rem;
+    color: var(--accent); line-height: 1; margin-bottom: 0.3rem;
   }
   .stat-label {
     font-size: 12px; font-weight: 400;
-    color: var(--muted); letter-spacing: 0.08em;
-    text-transform: uppercase;
+    color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase;
   }
 
-  /* ── Section layout ── */
-  .section-inner {
-    max-width: 1100px; margin: 0 auto;
-    padding: 5rem 6vw;
-  }
+  .section-inner { max-width: 1100px; margin: 0 auto; padding: 5rem 6vw; }
   .section-label {
     font-family: 'DM Mono', monospace;
     font-size: 11px; letter-spacing: 0.2em;
-    color: var(--accent3); text-transform: uppercase;
-    margin-bottom: 0.6rem;
+    color: var(--accent3); text-transform: uppercase; margin-bottom: 0.6rem;
   }
   .section-title {
     font-family: 'EB Garamond', serif;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 500; line-height: 1.2;
-    margin-bottom: 2.5rem;
+    font-weight: 500; line-height: 1.2; margin-bottom: 2.5rem;
   }
 
-  /* ── Research ── */
   #research { background: var(--bg2); }
   .research-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.25rem;
   }
   .research-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
+    background: var(--bg3); border: 1px solid var(--border);
     border-radius: 12px; padding: 1.8rem;
     transition: border-color 0.25s, transform 0.25s;
   }
-  .research-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-3px);
-  }
-  .research-card-icon {
-    font-size: 1.6rem; margin-bottom: 1rem;
-    display: block;
-  }
+  .research-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .research-card-icon { font-size: 1.6rem; margin-bottom: 1rem; display: block; }
   .research-card h3 {
     font-family: 'EB Garamond', serif;
-    font-size: 1.25rem; font-weight: 500;
-    margin-bottom: 0.6rem;
+    font-size: 1.25rem; font-weight: 500; margin-bottom: 0.6rem;
   }
   .research-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
   .tag {
@@ -220,16 +181,13 @@
     font-size: 10px; letter-spacing: 0.1em;
     color: var(--accent2); background: rgba(124,92,228,0.12);
     border: 1px solid rgba(124,92,228,0.25);
-    padding: 3px 10px; border-radius: 20px;
-    margin-right: 6px;
+    padding: 3px 10px; border-radius: 20px; margin-right: 6px;
   }
 
-  /* ── Publications ── */
   #publications { background: var(--bg); }
   .pub-list { display: flex; flex-direction: column; gap: 1.25rem; }
   .pub-item {
-    background: var(--card);
-    border: 1px solid var(--border);
+    background: var(--card); border: 1px solid var(--border);
     border-radius: 10px; padding: 1.5rem 1.8rem;
     display: flex; gap: 1.5rem; align-items: flex-start;
     transition: border-color 0.2s;
@@ -237,19 +195,12 @@
   .pub-item:hover { border-color: rgba(100,140,255,0.3); }
   .pub-year {
     font-family: 'DM Mono', monospace;
-    font-size: 12px; color: var(--accent);
-    min-width: 40px; padding-top: 3px;
+    font-size: 12px; color: var(--accent); min-width: 40px; padding-top: 3px;
   }
   .pub-body { flex: 1; }
-  .pub-title {
-    font-size: 0.97rem; font-weight: 500;
-    margin-bottom: 0.35rem; line-height: 1.5;
-  }
+  .pub-title { font-size: 0.97rem; font-weight: 500; margin-bottom: 0.35rem; line-height: 1.5; }
   .pub-authors { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.25rem; }
-  .pub-journal {
-    font-size: 0.82rem; color: var(--accent3);
-    font-family: 'DM Mono', monospace;
-  }
+  .pub-journal { font-size: 0.82rem; color: var(--accent3); font-family: 'DM Mono', monospace; }
   .pub-link {
     display: inline-flex; align-items: center; gap: 5px;
     margin-top: 0.6rem; font-size: 12px;
@@ -258,7 +209,6 @@
   }
   .pub-link:hover { opacity: 1; }
 
-  /* ── Teaching ── */
   #teaching { background: var(--bg2); }
   .course-grid {
     display: grid;
@@ -267,110 +217,212 @@
   }
   .course-card {
     background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 10px; padding: 1.4rem;
-    transition: border-color 0.2s;
+    border-radius: 10px; padding: 1.4rem; transition: border-color 0.2s;
   }
   .course-card:hover { border-color: rgba(100,140,255,0.35); }
   .course-code {
     font-family: 'DM Mono', monospace;
-    font-size: 11px; color: var(--gold);
-    letter-spacing: 0.1em; margin-bottom: 0.5rem;
+    font-size: 11px; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 0.5rem;
   }
   .course-card h3 { font-size: 0.97rem; font-weight: 500; margin-bottom: 0.4rem; }
   .course-card p { font-size: 0.85rem; color: var(--muted); }
 
-  /* ── CV / Timeline ── */
   #cv { background: var(--bg); }
   .timeline { position: relative; padding-left: 2rem; }
   .timeline::before {
     content: ''; position: absolute; left: 0; top: 0;
     width: 1px; height: 100%; background: var(--border);
   }
-  .timeline-item {
-    position: relative; margin-bottom: 2.2rem;
-    padding-left: 1.5rem;
-  }
+  .timeline-item { position: relative; margin-bottom: 2.2rem; padding-left: 1.5rem; }
   .timeline-item::before {
     content: ''; position: absolute; left: -2.4rem; top: 6px;
     width: 8px; height: 8px; border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 3px rgba(79,142,247,0.15);
+    background: var(--accent); box-shadow: 0 0 0 3px rgba(79,142,247,0.15);
   }
-  .timeline-date {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px; color: var(--muted);
-    letter-spacing: 0.1em; margin-bottom: 0.3rem;
-  }
+  .timeline-date { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); letter-spacing: 0.1em; margin-bottom: 0.3rem; }
   .timeline-role { font-size: 1rem; font-weight: 500; margin-bottom: 0.2rem; }
   .timeline-place { font-size: 0.9rem; color: var(--accent3); margin-bottom: 0.35rem; }
   .timeline-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
 
-  /* ── Contact ── */
-  #contact {
-    background: var(--bg2);
-    border-top: 1px solid var(--border);
-  }
-  .contact-grid {
+  /* ── Team section ── */
+  #team { background: var(--bg); }
+  .team-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
   }
+  .team-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 14px; overflow: hidden;
+    transition: border-color 0.25s, transform 0.25s;
+    text-align: center;
+  }
+  .team-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+  .team-photo-wrap {
+    width: 100%; aspect-ratio: 1/1; overflow: hidden;
+    background: var(--bg2);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .team-photo-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.4s;
+  }
+  .team-card:hover .team-photo-wrap img { transform: scale(1.05); }
+  .team-photo-placeholder {
+    width: 70px; height: 70px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent2), var(--accent));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; color: #fff; font-family: 'EB Garamond', serif;
+    font-weight: 500;
+  }
+  .team-info { padding: 1.1rem 1rem 1.3rem; }
+  .team-name { font-size: 0.97rem; font-weight: 500; margin-bottom: 0.2rem; }
+  .team-role {
+    font-size: 0.8rem; color: var(--accent3);
+    font-family: 'DM Mono', monospace; letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+  }
+  .team-topic { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+  .team-links { display: flex; justify-content: center; gap: 10px; margin-top: 0.7rem; }
+  .team-link {
+    font-size: 11px; font-family: 'DM Mono', monospace;
+    color: var(--accent); text-decoration: none;
+    border: 1px solid rgba(79,142,247,0.25);
+    padding: 3px 10px; border-radius: 20px;
+    transition: background 0.2s;
+  }
+  .team-link:hover { background: rgba(79,142,247,0.1); }
+  .team-section-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.3rem; font-weight: 500;
+    margin: 2.5rem 0 1.2rem;
+    color: var(--text);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── Teaching expanded ── */
+  .teaching-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.9rem; margin-top: 0.5rem;
+  }
+  .teaching-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px; letter-spacing: 0.12em;
+    color: var(--muted); text-transform: uppercase;
+    text-align: left; padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .teaching-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(100,140,255,0.06);
+    color: var(--text); vertical-align: top;
+    font-size: 0.88rem;
+  }
+  .teaching-table tr:hover td { background: rgba(79,142,247,0.04); }
+  .course-tag {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    background: rgba(240,192,96,0.12); color: var(--gold);
+    border: 1px solid rgba(240,192,96,0.2);
+    padding: 2px 8px; border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* ── Admin section ── */
+  #admin { background: var(--bg2); }
+  .admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .admin-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.6rem;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .admin-card:hover { border-color: var(--accent2); transform: translateY(-2px); }
+  .admin-card-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 0.8rem;
+  }
+  .admin-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: rgba(124,92,228,0.15);
+    border: 1px solid rgba(124,92,228,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 17px; flex-shrink: 0;
+  }
+  .admin-card-header h3 { font-size: 0.97rem; font-weight: 500; }
+  .admin-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.7; }
+  .admin-period {
+    font-family: 'DM Mono', monospace; font-size: 10px;
+    color: var(--accent3); letter-spacing: 0.1em;
+    margin-top: 0.6rem; display: block;
+  }
+
+  /* Awards section */
+  #awards { background: var(--bg2); }
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .award-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.6rem;
+    display: flex; gap: 1rem; align-items: flex-start;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+  .award-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+  .award-icon {
+    font-size: 1.5rem; flex-shrink: 0; margin-top: 2px;
+  }
+  .award-body h3 { font-size: 0.97rem; font-weight: 500; margin-bottom: 0.3rem; }
+  .award-body p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .award-year {
+    font-family: 'DM Mono', monospace; font-size: 11px;
+    color: var(--gold); margin-top: 0.4rem;
+  }
+
+  #contact { background: var(--bg); border-top: 1px solid var(--border); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
   .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
-  .contact-row {
-    display: flex; align-items: flex-start; gap: 1rem;
-  }
+  .contact-row { display: flex; align-items: flex-start; gap: 1rem; }
   .contact-icon {
     width: 36px; height: 36px; border-radius: 8px;
-    background: rgba(79,142,247,0.1);
-    border: 1px solid rgba(79,142,247,0.2);
+    background: rgba(79,142,247,0.1); border: 1px solid rgba(79,142,247,0.2);
     display: flex; align-items: center; justify-content: center;
     font-size: 15px; flex-shrink: 0;
   }
   .contact-text small { font-size: 11px; color: var(--muted); display: block; letter-spacing: 0.08em; }
-  .contact-text a, .contact-text span {
-    font-size: 0.92rem; color: var(--text);
-    text-decoration: none;
-  }
+  .contact-text a, .contact-text span { font-size: 0.92rem; color: var(--text); text-decoration: none; }
   .contact-text a:hover { color: var(--accent); }
   .contact-form { display: flex; flex-direction: column; gap: 1rem; }
   .form-group input, .form-group textarea {
-    width: 100%;
-    background: var(--bg3); border: 1px solid var(--border);
+    width: 100%; background: var(--bg3); border: 1px solid var(--border);
     border-radius: 8px; padding: 10px 14px;
     color: var(--text); font-family: 'Outfit', sans-serif;
-    font-size: 0.9rem; outline: none;
-    transition: border-color 0.2s;
+    font-size: 0.9rem; outline: none; transition: border-color 0.2s;
   }
-  .form-group input:focus, .form-group textarea:focus {
-    border-color: var(--accent);
-  }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
   .form-group textarea { height: 120px; resize: vertical; }
   ::placeholder { color: var(--faint); }
 
-  /* ── Footer ── */
   footer {
-    background: var(--bg);
-    border-top: 1px solid var(--border);
+    background: var(--bg); border-top: 1px solid var(--border);
     text-align: center; padding: 2rem;
     font-size: 12px; color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    letter-spacing: 0.08em;
+    font-family: 'DM Mono', monospace; letter-spacing: 0.08em;
   }
 
-  /* ── Animations ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  @keyframes fadeIn {
-    from { opacity: 0; } to { opacity: 1; }
-  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-  /* ── Scroll reveal ── */
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s, transform 0.65s; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* ── Responsive ── */
   @media (max-width: 768px) {
     #hero { flex-direction: column; text-align: center; align-items: center; }
     .hero-ctas { justify-content: center; }
@@ -386,11 +438,14 @@
 
 <!-- NAV -->
 <nav>
-  <a class="nav-brand" href="#">DR. Suchismita Sahoo</a>
+  <a class="nav-brand" href="#">DR. SUCHISMITA SAHOO</a>
   <ul class="nav-links">
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
+    <li><a href="#team">Team</a></li>
     <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#admin">Service</a></li>
+    <li><a href="#awards">Awards</a></li>
     <li><a href="#cv">CV</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -400,14 +455,14 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-text">
-    <div class="hero-badge">HIGH ENERGY PHYSICS · DUNE COLLABORATOR · FLAVOR PHYSICS · DARK MATTER</div>
+    <div class="hero-badge">THEORETICAL HEP · FLAVOR PHYSICS · DARK MATTER · NEUTRINO PHYSICS</div>
     <h1 class="hero-name">Dr. <em>Suchismita Sahoo</em></h1>
     <p class="hero-title">
       Assistant Professor · <strong>Central University of Karnataka</strong><br>
-      Department of Physics
+      Department of Physics, Kalaburagi, India
     </p>
     <p class="hero-desc">
-      Probing the Standard Model through the lens of flavor physics and beyond. My research focuses on rare B meson decays, leptoquark phenomenology, dark matter model building, and the muon anomalous magnetic moment — seeking answers to the open puzzles of particle physics.
+      A theoretical high-energy physicist developing unified models that accommodate B anomalies, neutrino physics, dark matter phenomenology, the muon g&#8722;2 anomaly, and lepton flavor violating decays — seeking answers to the open puzzles of particle physics.
     </p>
     <div class="hero-ctas">
       <a href="#research" class="btn btn-primary">Explore Research</a>
@@ -415,7 +470,6 @@
       <a href="https://inspirehep.net/authors/1509873?ui-citation-summary=true" class="btn btn-ghost" target="_blank">INSPIRE-HEP ↗</a>
     </div>
   </div>
-
   <div class="hero-visual">
     <div class="atom-wrap">
       <canvas id="atom-canvas" width="280" height="280"></canvas>
@@ -426,20 +480,20 @@
 <!-- STATS -->
 <div class="stats-bar reveal">
   <div class="stat-item">
-    <div class="stat-num">50+</div>
-    <div class="stat-label">Publications</div>
+    <div class="stat-num">17+</div>
+    <div class="stat-label">Journal Papers</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">1000+</div>
+    <div class="stat-num">18+</div>
+    <div class="stat-label">Proceedings</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">1,100+</div>
     <div class="stat-label">Citations</div>
   </div>
   <div class="stat-item">
-    <div class="stat-num">1</div>
-    <div class="stat-label">Active Grants</div>
-  </div>
-  <div class="stat-item">
     <div class="stat-num">2</div>
-    <div class="stat-label">PhD Students</div>
+    <div class="stat-label">100+ Cited Papers</div>
   </div>
 </div>
 
@@ -447,35 +501,42 @@
 <section id="research">
   <div class="section-inner">
     <p class="section-label reveal">Research Focus</p>
-    <h2 class="section-title reveal">Exploring the Energy Frontier</h2>
+    <h2 class="section-title reveal">Probing the Standard Model &amp; Beyond</h2>
+    <p style="color:var(--muted);max-width:700px;margin-bottom:2.5rem;font-size:0.97rem;line-height:1.8;" class="reveal">
+      My research is focused on developing a unified model that accommodates B anomalies, neutrino physics, dark matter phenomenology, the muon g&#8722;2 anomaly, and lepton flavor violating tau decays.
+    </p>
     <div class="research-grid">
       <div class="research-card reveal">
         <span class="research-card-icon">⚛️</span>
-        <h3>Higgs Boson Physics</h3>
-        <p>Precision measurements of Higgs couplings, rare decay modes, and self-coupling at the ATLAS detector. Searching for deviations from Standard Model predictions.</p>
-        <span class="tag">LHC · ATLAS</span>
-        <span class="tag">Run 3</span>
+        <h3>Flavor Anomalies &amp; SM Extensions</h3>
+        <p>Rare leptonic and semileptonic B, D, and K meson decays. Beyond the Standard Model physics via leptoquarks, Z&#8242; bosons, and vector-like fermions to explain RK, RD(*) anomalies observed at LHCb.</p>
+        <span class="tag">B-Physics</span>
+        <span class="tag">Leptoquarks</span>
+        <span class="tag">Z&#8242;</span>
       </div>
       <div class="research-card reveal">
-        <span class="research-card-icon">🔭</span>
-        <h3>Beyond Standard Model</h3>
-        <p>Searches for supersymmetric particles, dark matter candidates, and exotic resonances in high-luminosity pp collision data at √s = 13.6 TeV.</p>
-        <span class="tag">SUSY</span>
-        <span class="tag">Dark Matter</span>
+        <span class="research-card-icon">🌑</span>
+        <h3>Dark Matter Model Building</h3>
+        <p>Construction of BSM models with scalar, vector-like, and Majorana dark matter candidates. Connecting dark matter phenomenology to flavor anomalies and rare B decay signatures at colliders.</p>
+        <span class="tag">Scalar DM</span>
+        <span class="tag">Majorana DM</span>
+        <span class="tag">GeV-scale</span>
       </div>
       <div class="research-card reveal">
-        <span class="research-card-icon">🛠️</span>
-        <h3>Detector Development</h3>
-        <p>R&D for inner tracker silicon strip sensors, fast timing detectors, and machine-learning-based trigger algorithms for HL-LHC upgrades.</p>
-        <span class="tag">ITk</span>
-        <span class="tag">HL-LHC</span>
+        <span class="research-card-icon">🔬</span>
+        <h3>Charged Lepton Physics</h3>
+        <p>Physics analysis of the muon anomalous magnetic moment (g&#8722;2)&#956; at the J-PARC experiment. Electron dipole moment, and lepton flavor violating tau decays as probes of new physics.</p>
+        <span class="tag">Muon g&#8722;2</span>
+        <span class="tag">J-PARC</span>
+        <span class="tag">LFV</span>
       </div>
       <div class="research-card reveal">
-        <span class="research-card-icon">💻</span>
-        <h3>Computational Methods</h3>
-        <p>Development of deep learning classifiers for jet tagging, anomaly detection for new physics, and distributed analysis frameworks for PB-scale datasets.</p>
-        <span class="tag">ML4HEP</span>
-        <span class="tag">GNNs</span>
+        <span class="research-card-icon">🌌</span>
+        <h3>Neutrino Physics</h3>
+        <p>Neutrino mass generation with new BSM particles, modular symmetry approaches to the neutrino mass matrix, leptogenesis, and neutrino oscillation simulation using GLoBES.</p>
+        <span class="tag">Neutrino Mass</span>
+        <span class="tag">Modular Symmetry</span>
+        <span class="tag">GLoBES</span>
       </div>
     </div>
   </div>
@@ -486,51 +547,169 @@
   <div class="section-inner">
     <p class="section-label reveal">Selected Works</p>
     <h2 class="section-title reveal">Recent Publications</h2>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:2rem;" class="reveal">
+      17 published papers · 18 conference proceedings · 11 preprints. Most papers published in <em>Physical Review D</em>. Two first-author papers have received over 100 citations each.
+    </p>
     <div class="pub-list">
 
       <div class="pub-item reveal">
         <div class="pub-year">2024</div>
         <div class="pub-body">
-          <div class="pub-title">Search for Supersymmetric Partners of the Top Quark in the Dilepton Final State with the ATLAS Detector</div>
-          <div class="pub-authors">ATLAS Collaboration (incl. <strong>Your Name</strong> et al.)</div>
-          <div class="pub-journal">Phys. Rev. Lett. 132, 221803</div>
-          <a href="#" class="pub-link">arXiv:2312.XXXXX ↗</a>
+          <div class="pub-title">Binwise exploration of vector couplings in B<sub>s</sub> → D<sub>s</sub><sup>(*)</sup> τν decays</div>
+          <div class="pub-authors">A. K. Yadav and <strong>S. Sahoo</strong></div>
+          <div class="pub-journal">arXiv:2410.06100 [hep-ph] — under review</div>
         </div>
       </div>
 
       <div class="pub-item reveal">
         <div class="pub-year">2024</div>
         <div class="pub-body">
-          <div class="pub-title">Measurement of the Higgs Boson Decay to b-Quarks with the Full Run 2 Dataset</div>
-          <div class="pub-authors">ATLAS Collaboration; <strong>Your Name</strong> (corresponding author)</div>
-          <div class="pub-journal">JHEP 2024, 031</div>
-          <a href="#" class="pub-link">arXiv:2401.XXXXX ↗</a>
-        </div>
-      </div>
-
-      <div class="pub-item reveal">
-        <div class="pub-year">2023</div>
-        <div class="pub-body">
-          <div class="pub-title">Graph Neural Networks for Jet Tagging at High Luminosity LHC Conditions</div>
-          <div class="pub-authors"><strong>Your Name</strong>, A. Collaborator, B. Researcher</div>
-          <div class="pub-journal">Comput. Softw. Big Sci. 7, 12 (2023)</div>
-          <a href="#" class="pub-link">arXiv:2305.XXXXX ↗</a>
+          <div class="pub-title">Signature of (axial)vector operators in B<sub>c</sub> → D<sub>s</sub><sup>(*)</sup> μμ decays</div>
+          <div class="pub-authors">M. K. Mohapatra, A. K. Yadav and <strong>S. Sahoo</strong></div>
+          <div class="pub-journal">arXiv:2409.01269 [hep-ph] — under review</div>
         </div>
       </div>
 
       <div class="pub-item reveal">
         <div class="pub-year">2022</div>
         <div class="pub-body">
-          <div class="pub-title">Silicon Strip Sensor Characterization for the ATLAS Inner Tracker Upgrade</div>
-          <div class="pub-authors"><strong>Your Name</strong>, C. Engineer, D. Physicist</div>
-          <div class="pub-journal">JINST 17, P09008 (2022)</div>
-          <a href="#" class="pub-link">arXiv:2206.XXXXX ↗</a>
+          <div class="pub-title">Light dark matter, rare B decays with missing energy in L<sub>μ</sub>−L<sub>τ</sub> model with a scalar leptoquark</div>
+          <div class="pub-authors">S. Singirala, <strong>S. Sahoo</strong> and R. Mohanta</div>
+          <div class="pub-journal">Phys. Rev. D 105 (2022) 015033</div>
+        </div>
+      </div>
+
+      <div class="pub-item reveal">
+        <div class="pub-year">2020</div>
+        <div class="pub-body">
+          <div class="pub-title">Unified explanation of flavor anomalies, radiative neutrino mass and ANITA anomalous events in a vector leptoquark model</div>
+          <div class="pub-authors">P. S. Bhupal Dev, R. Mohanta, S. Patra and <strong>S. Sahoo</strong></div>
+          <div class="pub-journal">Phys. Rev. D 102, 095012 (2020)</div>
+          <a href="https://arxiv.org/abs/2004.09464" class="pub-link" target="_blank">arXiv:2004.09464 ↗</a>
+        </div>
+      </div>
+
+      <div class="pub-item reveal">
+        <div class="pub-year">2017</div>
+        <div class="pub-body">
+          <div class="pub-title">Explaining R<sub>K</sub> and R<sub>D(*)</sub> anomalies with vector leptoquark</div>
+          <div class="pub-authors"><strong>S. Sahoo</strong>, R. Mohanta and A. Giri</div>
+          <div class="pub-journal">Phys. Rev. D 95, 035027 (2017) — 100+ citations</div>
+          <a href="https://arxiv.org/abs/1609.04367" class="pub-link" target="_blank">arXiv:1609.04367 ↗</a>
+        </div>
+      </div>
+
+      <div class="pub-item reveal">
+        <div class="pub-year">2016</div>
+        <div class="pub-body">
+          <div class="pub-title">Leptoquark effects on b → sνν̄ and B → Kl<sup>+</sup>l<sup>−</sup> decay processes</div>
+          <div class="pub-authors"><strong>S. Sahoo</strong> and R. Mohanta</div>
+          <div class="pub-journal">New J. Phys. 18, 013032 (2016) — 100+ citations</div>
+          <a href="https://arxiv.org/abs/1509.06248" class="pub-link" target="_blank">arXiv:1509.06248 ↗</a>
         </div>
       </div>
 
     </div>
     <div style="margin-top:2rem;" class="reveal">
-      <a href="https://inspirehep.net" class="btn btn-ghost" target="_blank">View All on INSPIRE-HEP ↗</a>
+      <a href="https://inspirehep.net/authors/1509873?ui-citation-summary=true" class="btn btn-ghost" target="_blank">View All on INSPIRE-HEP ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="section-inner">
+    <p class="section-label reveal">Research Group</p>
+    <h2 class="section-title reveal">Team Members</h2>
+
+    <!-- PhD Students -->
+    <h3 class="team-section-title reveal">PhD Students</h3>
+    <div class="team-grid">
+
+      <div class="team-card reveal">
+        <div class="team-photo-wrap">
+          <!-- Replace src with actual photo path, e.g. "photos/student1.jpg" -->
+          <img src="photos/phd1.jpg" alt="PhD Student 1"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="team-photo-placeholder" style="display:none;">A</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">[Student Name]</div>
+          <div class="team-role">PhD Student · 2022–present</div>
+          <div class="team-topic">Flavor anomalies and leptoquark phenomenology</div>
+          <div class="team-links">
+            <a href="mailto:student@cuk.ac.in" class="team-link">Email</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card reveal">
+        <div class="team-photo-wrap">
+          <img src="photos/phd2.jpg" alt="PhD Student 2"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="team-photo-placeholder" style="display:none;">B</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">[Student Name]</div>
+          <div class="team-role">PhD Student · 2023–present</div>
+          <div class="team-topic">Dark matter model building and B-physics</div>
+          <div class="team-links">
+            <a href="mailto:student@cuk.ac.in" class="team-link">Email</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ADD MORE PhD students by copying the block above -->
+
+    </div>
+
+    <!-- MSc / Project Students -->
+    <h3 class="team-section-title reveal">Project &amp; MSc Students</h3>
+    <div class="team-grid">
+
+      <div class="team-card reveal">
+        <div class="team-photo-wrap">
+          <img src="photos/msc1.jpg" alt="MSc Student"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="team-photo-placeholder" style="display:none;">C</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">[Student Name]</div>
+          <div class="team-role">MSc Project · 2024–25</div>
+          <div class="team-topic">Neutrino mass models with modular symmetry</div>
+        </div>
+      </div>
+
+      <!-- ADD MORE project students by copying the block above -->
+
+    </div>
+
+    <!-- Alumni -->
+    <h3 class="team-section-title reveal">Alumni</h3>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-photo-wrap">
+          <img src="photos/alumni1.jpg" alt="Alumni"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="team-photo-placeholder" style="display:none;">D</div>
+        </div>
+        <div class="team-info">
+          <div class="team-name">[Alumni Name]</div>
+          <div class="team-role">PhD · Graduated 2023</div>
+          <div class="team-topic">Thesis: Rare B decays with vector leptoquarks</div>
+          <div class="team-links">
+            <a href="#" class="team-link">INSPIRE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem;padding:1.6rem;background:var(--bg3);border:1px solid var(--border);border-radius:12px;" class="reveal">
+      <h3 style="font-family:'EB Garamond',serif;font-size:1.3rem;margin-bottom:0.7rem;">Join the Group</h3>
+      <p style="color:var(--muted);max-width:640px;font-size:0.92rem;line-height:1.8;">
+        I am actively recruiting motivated <strong style="color:var(--text);">PhD students and postdocs</strong> interested in theoretical HEP — flavor physics, dark matter, and neutrino phenomenology. Please send your CV and a brief research statement to
+        <a href="mailto:suchismita@cuk.ac.in" style="color:var(--accent);">suchismita@cuk.ac.in</a>.
+      </p>
     </div>
   </div>
 </section>
@@ -539,34 +718,179 @@
 <section id="teaching">
   <div class="section-inner">
     <p class="section-label reveal">Education</p>
-    <h2 class="section-title reveal">Teaching &amp; Courses</h2>
-    <div class="course-grid">
+    <h2 class="section-title reveal">Teaching</h2>
+
+    <!-- Courses Table -->
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="teaching-table">
+        <thead>
+          <tr>
+            <th>Course</th>
+            <th>Level</th>
+            <th>Semester</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Quantum Field Theory</strong><br><span class="course-tag">PHY-601</span></td>
+            <td>M.Sc. / PhD</td>
+            <td>Odd Sem</td>
+            <td>Canonical quantization, path integrals, gauge theories, renormalization group.</td>
+          </tr>
+          <tr>
+            <td><strong>Particle Physics</strong><br><span class="course-tag">PHY-504</span></td>
+            <td>M.Sc.</td>
+            <td>Even Sem</td>
+            <td>Standard Model, Feynman diagrams, electroweak unification, Higgs mechanism, BSM overview.</td>
+          </tr>
+          <tr>
+            <td><strong>Nuclear &amp; Particle Physics</strong><br><span class="course-tag">PHY-302</span></td>
+            <td>B.Sc.</td>
+            <td>Odd Sem</td>
+            <td>Nuclear structure, radioactive decay, fission/fusion, detectors, particle zoo.</td>
+          </tr>
+          <tr>
+            <td><strong>Classical Mechanics</strong><br><span class="course-tag">PHY-201</span></td>
+            <td>B.Sc.</td>
+            <td>Even Sem</td>
+            <td>Lagrangian and Hamiltonian mechanics, central force problems, rigid body dynamics.</td>
+          </tr>
+          <tr>
+            <td><strong>Computational Methods in Physics</strong><br><span class="course-tag">PHY-402</span></td>
+            <td>M.Sc.</td>
+            <td>Even Sem</td>
+            <td>Mathematica, Python, numerical methods, ROOT, and HEP software tools.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Invited Lectures -->
+    <h3 class="team-section-title reveal" style="margin-top:2.5rem;">Invited Lectures &amp; Schools</h3>
+    <div class="course-grid" style="margin-top:0;">
       <div class="course-card reveal">
-        <div class="course-code">PHYS 401 · FALL 2024</div>
-        <h3>Particle Physics</h3>
-        <p>Introduction to the Standard Model, Feynman diagrams, and experimental methods at colliders. UG/PG level.</p>
+        <div class="course-code">REFRESHER COURSE</div>
+        <h3>Flavor Physics &amp; Anomalies</h3>
+        <p>Lecture series delivered at UGC-sponsored refresher courses for college teachers in physics.</p>
       </div>
       <div class="course-card reveal">
-        <div class="course-code">PHYS 612 · SPRING 2025</div>
-        <h3>Quantum Field Theory I</h3>
-        <p>Canonical quantization, path integrals, renormalization, and gauge theories. Graduate level.</p>
+        <div class="course-code">WORKSHOP</div>
+        <h3>BSM Phenomenology</h3>
+        <p>Hands-on workshop on leptoquark models, dark matter tools (MicrOMEGA, CalcHEP) for graduate students.</p>
       </div>
       <div class="course-card reveal">
-        <div class="course-code">PHYS 720 · FALL 2024</div>
-        <h3>Advanced Detector Physics</h3>
-        <p>Radiation-matter interactions, semiconductor sensors, signal processing, and data acquisition systems.</p>
-      </div>
-      <div class="course-card reveal">
-        <div class="course-code">PHYS 810 · SPRING 2025</div>
-        <h3>ML Methods in HEP</h3>
-        <p>Deep learning for event classification, generative models, and anomaly detection in HEP datasets.</p>
+        <div class="course-code">OUTREACH</div>
+        <h3>Women in Physics</h3>
+        <p>Talks and mentoring sessions for undergraduate women students on careers in theoretical physics.</p>
       </div>
     </div>
-    <div style="margin-top:2.5rem;" class="reveal">
-      <h3 style="font-family:'EB Garamond',serif;font-size:1.4rem;margin-bottom:1rem;">Research Group</h3>
-      <p style="color:var(--muted);max-width:600px;">
-        I am actively recruiting motivated <strong style="color:var(--text);">PhD students and postdocs</strong> interested in experimental HEP, detector instrumentation, and data analysis. Please reach out with your CV and a brief statement of research interests.
-      </p>
+  </div>
+</section>
+
+<!-- ADMIN / SERVICE -->
+<section id="admin">
+  <div class="section-inner">
+    <p class="section-label reveal">Professional Service</p>
+    <h2 class="section-title reveal">Administrative &amp; Academic Service</h2>
+    <div class="admin-grid">
+
+      <div class="admin-card reveal">
+        <div class="admin-card-header">
+          <div class="admin-icon">📋</div>
+          <h3>Board of Studies Member</h3>
+        </div>
+        <p>Member of the Board of Studies, Department of Physics, Central University of Karnataka. Curriculum design and course approval.</p>
+        <span class="admin-period">2020 — PRESENT · CUK</span>
+      </div>
+
+      <div class="admin-card reveal">
+        <div class="admin-card-header">
+          <div class="admin-icon">🎓</div>
+          <h3>PhD Thesis Examiner</h3>
+        </div>
+        <p>External examiner for PhD thesis evaluation at various Indian universities in theoretical and high-energy physics.</p>
+        <span class="admin-period">ONGOING</span>
+      </div>
+
+      <div class="admin-card reveal">
+        <div class="admin-card-header">
+          <div class="admin-icon">📝</div>
+          <h3>Journal Referee</h3>
+        </div>
+        <p>Peer reviewer for Physical Review D, European Physical Journal C, Journal of Physics G, Nuclear Physics B, and Physics Letters B.</p>
+        <span class="admin-period">ONGOING</span>
+      </div>
+
+      <div class="admin-card reveal">
+        <div class="admin-card-header">
+          <div class="admin-icon">🏛️</div>
+          <h3>Departmental Committee</h3>
+        </div>
+        <p>Member of departmental admission, examination, and research promotion committees at CUK.</p>
+        <span class="admin-period">2020 — PRESENT · CUK</span>
+      </div>
+
+      <div class="admin-card reveal">
+        <div class="admin-card-header">
+          <div class="admin-icon">🌐</div>
+          <h3>Conference Organiser</h3>
+        </div>
+        <p>Organising committee member for national and international workshops and conferences in high-energy physics.</p>
+        <span class="admin-period">VARIOUS</span>
+      </div>
+
+      <div class="admin-card reveal">
+        <div class="admin-card-header">
+          <div class="admin-icon">👩‍🏫</div>
+          <h3>UGC-HRDC Resource Person</h3>
+        </div>
+        <p>Resource person for UGC Human Resource Development Centre refresher and orientation programmes for faculty in physics.</p>
+        <span class="admin-period">ONGOING</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-inner">
+    <p class="section-label reveal">Recognition</p>
+    <h2 class="section-title reveal">Awards &amp; Honours</h2>
+    <div class="awards-grid">
+      <div class="award-card reveal">
+        <div class="award-icon">🏆</div>
+        <div class="award-body">
+          <h3>Orissa Physical Society Young Scientist Award</h3>
+          <p>Awarded for outstanding contributions to Theoretical Physics.</p>
+          <div class="award-year">2023</div>
+        </div>
+      </div>
+      <div class="award-card reveal">
+        <div class="award-icon">🥇</div>
+        <div class="award-body">
+          <h3>Young Woman Researcher in Physics — VIWA</h3>
+          <p>Recognized as a young woman researcher making significant impact in high energy physics.</p>
+          <div class="award-year">2023</div>
+        </div>
+      </div>
+      <div class="award-card reveal">
+        <div class="award-icon">📖</div>
+        <div class="award-body">
+          <h3>Top Cited Author Award</h3>
+          <p>Awarded by IOP Publishing for being among the most cited authors in the journal.</p>
+          <div class="award-year">2019</div>
+        </div>
+      </div>
+      <div class="award-card reveal">
+        <div class="award-icon">💰</div>
+        <div class="award-body">
+          <h3>UGC Start-Up Research Grant</h3>
+          <p>Principal Investigator on a UGC-funded research project worth Rs. 10 lakhs for independent research.</p>
+          <div class="award-year">CUK</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -578,35 +902,52 @@
     <h2 class="section-title reveal">Career &amp; Education</h2>
     <div class="timeline">
       <div class="timeline-item reveal">
-        <div class="timeline-date">2019 — PRESENT</div>
+        <div class="timeline-date">DEC 2019 — PRESENT</div>
         <div class="timeline-role">Assistant Professor of Physics</div>
-        <div class="timeline-place"> Central University of Karnataka, Kalaburagi, Karnataka, India</div>
-        <div class="timeline-desc">Leading a research group in Theoretical HEP; PI on [Grant Name]; DUNE collaboration member.</div>
+        <div class="timeline-place">Central University of Karnataka, Kadaganchi, Kalaburagi, India</div>
+        <div class="timeline-desc">Leading a theoretical HEP research group; PI on UGC Start-Up Grant; supervising PhD and postgraduate students. Research on flavor anomalies, dark matter, and neutrino physics.</div>
       </div>
       <div class="timeline-item reveal">
-        <div class="timeline-date">2018 — 2019</div>
-        <div class="timeline-role"> Postdoctoral Researcher</div>
-        <div class="timeline-place">PRL, Ahmedabad, India</div>
-        <div class="timeline-desc">Work on theoretical flavour physics.</div>
+        <div class="timeline-date">JUNE 2018 — DEC 2019</div>
+        <div class="timeline-role">Postdoctoral Fellow</div>
+        <div class="timeline-place">Physical Research Laboratory, Ahmedabad, India</div>
+        <div class="timeline-desc">Mentored by Prof. Namit Mahajan. Research in BSM phenomenology, dark matter model building, and flavor physics.</div>
       </div>
       <div class="timeline-item reveal">
-        <div class="timeline-date">2013 — 2018</div>
+        <div class="timeline-date">2018</div>
         <div class="timeline-role">Ph.D. in Physics</div>
         <div class="timeline-place">University of Hyderabad, India</div>
-        <div class="timeline-desc">Thesis: "". Advisor: Prof. Rukmani Mohanta.</div>
+        <div class="timeline-desc">Thesis: "Phenomenological Study of Rare Semileptonic B Meson Decays with Leptoquarks." Supervisor: Prof. Rukmani Mohanta.</div>
       </div>
       <div class="timeline-item reveal">
-        <div class="timeline-date">2011 — 2013</div>
-        <div class="timeline-role">M.Sc. Physics (First Class)</div>
-        <div class="timeline-place">Utkal University, Vanivihar, Bhubaneswar, Odisha</div>
-        <div class="timeline-desc">Specialized in Particle Physics</div>
+        <div class="timeline-date">2013</div>
+        <div class="timeline-role">M.Sc. in Physics</div>
+        <div class="timeline-place">Utkal University, Bhubaneswar, Odisha</div>
+        <div class="timeline-desc">Postgraduate studies in theoretical and experimental physics.</div>
       </div>
       <div class="timeline-item reveal">
-        <div class="timeline-date">2008 — 2011</div>
-        <div class="timeline-role">B.Sc. Physics (First Class Honours)</div>
+        <div class="timeline-date">2011</div>
+        <div class="timeline-role">B.Sc. in Physics (Honours)</div>
         <div class="timeline-place">Ravenshaw University, Cuttack, Odisha</div>
-        <div class="timeline-desc"></div>
+        <div class="timeline-desc">Undergraduate degree in Physics with honours.</div>
       </div>
+    </div>
+    <div style="margin-top:2.5rem;" class="reveal">
+      <h3 style="font-family:'EB Garamond',serif;font-size:1.3rem;margin-bottom:1rem;">Computational Skills</h3>
+      <p style="color:var(--muted);font-size:0.9rem;line-height:2;">
+        <span class="tag" style="margin-bottom:6px;">Mathematica</span>
+        <span class="tag">Python</span>
+        <span class="tag">C / C++</span>
+        <span class="tag">Fortran</span>
+        <span class="tag">ROOT</span>
+        <span class="tag">MicrOMEGA</span>
+        <span class="tag">CalcHEP</span>
+        <span class="tag">LanHEP</span>
+        <span class="tag">Flavio</span>
+        <span class="tag">SuperIso</span>
+        <span class="tag">GLoBES</span>
+        <span class="tag">Matlab</span>
+      </p>
     </div>
     <div style="margin-top:2rem;" class="reveal">
       <a href="cv.pdf" class="btn btn-primary" download>Download Full CV (PDF)</a>
@@ -632,25 +973,25 @@
           <div class="contact-icon">🏛️</div>
           <div class="contact-text">
             <small>OFFICE</small>
-            <span>Room --, Department of Physics <br> Central University of Karnataka</span>
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="contact-icon">🔬</div>
-          <div class="contact-text">
-            <small>Fermilab</small>
-            <a href="https://www.dunescience.org" target="_blank">DUNE Experiment, USA</a>
+            <span>Department of Physics<br>Central University of Karnataka<br>Kadaganchi, Kalaburagi 585367, India</span>
           </div>
         </div>
         <div class="contact-row">
           <div class="contact-icon">🔗</div>
           <div class="contact-text">
             <small>PROFILES</small>
-            <a href="https://orcid.org/0000-0003-3857-0802" target="_blank">ORCID</a>
-            &nbsp;·&nbsp;
-            <a href="https://inspirehep.net/authors/1509873" target="_blank">INSPIRE</a>
+            <a href="https://inspirehep.net/authors/1509873?ui-citation-summary=true" target="_blank">INSPIRE-HEP</a>
             &nbsp;·&nbsp;
             <a href="https://scholar.google.com/citations?user=sUpq7mwAAAAJ" target="_blank">Google Scholar</a>
+            &nbsp;·&nbsp;
+            <a href="https://sites.google.com/view/suchismitasahoo/home" target="_blank">Google Site</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🌐</div>
+          <div class="contact-text">
+            <small>INSTITUTION</small>
+            <a href="https://www.cuk.ac.in" target="_blank">Central University of Karnataka</a>
           </div>
         </div>
       </div>
@@ -663,7 +1004,7 @@
             <input type="email" placeholder="Your email">
           </div>
           <div class="form-group">
-            <textarea placeholder="Your message (research inquiries, collaboration, prospective students...)"></textarea>
+            <textarea placeholder="Your message — research inquiries, collaboration, prospective PhD students welcome..."></textarea>
           </div>
           <button class="btn btn-primary" style="align-self:flex-start;">Send Message</button>
         </div>
@@ -673,122 +1014,143 @@
 </section>
 
 <footer>
-  <p>© 2026 Dr. Suchismita Sahoo · Built with care · Hosted on GitHub Pages</p>
+  <p>© 2025 Dr. Suchismita Sahoo · Department of Physics, Central University of Karnataka · Hosted on GitHub Pages</p>
 </footer>
 
 <script>
-  /* ── Quantum Mechanical Atom ── */
-  const atomCv = document.getElementById('atom-canvas');
-  const actx = atomCv.getContext('2d');
-  const AW = 280, AH = 280, ox = 140, oy = 140;
-  let at = 0;
+/* ── Particle canvas ── */
+const canvas = document.getElementById('canvas-bg');
+const ctx = canvas.getContext('2d');
+let W, H, particles = [];
+function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+resize();
+window.addEventListener('resize', resize);
+for (let i = 0; i < 90; i++) {
+  particles.push({
+    x: Math.random() * 1600, y: Math.random() * 900,
+    r: Math.random() * 1.2 + 0.3,
+    vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25,
+    a: Math.random() * 0.5 + 0.15
+  });
+}
+function drawParticles() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => {
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+    if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(79,142,247,${p.a})`; ctx.fill();
+  });
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(79,142,247,${0.06 * (1 - dist / 120)})`;
+        ctx.lineWidth = 0.5; ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(drawParticles);
+}
+drawParticles();
 
-  const orbitals = [
-    { shell: 28, rgb:[167,139,250], points:[] },
-    { shell: 55, rgb:[96,165,250],  points:[] },
-    { shell: 85, rgb:[52,211,153],  points:[] },
-  ];
-  orbitals.forEach(o => {
-    for(let i=0;i<320;i++){
-      const sigma = 9 + o.shell*0.08;
-      const dr = (Math.random()-0.5)*sigma*2.5;
-      o.points.push({
-        angle: Math.random()*Math.PI*2,
-        r: Math.max(4, o.shell + dr*Math.exp(-Math.abs(dr)/(sigma*1.2))),
-        speed: (0.0004+Math.random()*0.0006)*(Math.random()<0.5?1:-1),
-        alpha: 0.12+Math.random()*0.35,
-        size:  0.8+Math.random()*1.4,
-        phase: Math.random()*Math.PI*2,
-        drift: (Math.random()-0.5)*0.0003,
-      });
+/* ── Quantum Mechanical Atom ── */
+const atomCv = document.getElementById('atom-canvas');
+const actx = atomCv.getContext('2d');
+const AW = 280, AH = 280, ox = 140, oy = 140;
+let at = 0;
+const orbitals = [
+  { shell: 28, rgb:[167,139,250], points:[] },
+  { shell: 55, rgb:[96,165,250],  points:[] },
+  { shell: 85, rgb:[52,211,153],  points:[] },
+];
+orbitals.forEach(o => {
+  for(let i=0;i<320;i++){
+    const sigma = 9 + o.shell*0.08;
+    const dr = (Math.random()-0.5)*sigma*2.5;
+    o.points.push({
+      angle: Math.random()*Math.PI*2,
+      r: Math.max(4, o.shell + dr*Math.exp(-Math.abs(dr)/(sigma*1.2))),
+      speed: (0.0004+Math.random()*0.0006)*(Math.random()<0.5?1:-1),
+      alpha: 0.12+Math.random()*0.35,
+      size:  0.8+Math.random()*1.4,
+      phase: Math.random()*Math.PI*2,
+      drift: (Math.random()-0.5)*0.0003,
+    });
+  }
+});
+const quarks = [
+  {a:0,    r:6, rgb:[244,114,182]},
+  {a:2.09, r:5, rgb:[251,146,60]},
+  {a:4.19, r:6, rgb:[167,139,250]},
+];
+function drawAtomFrame() {
+  actx.clearRect(0,0,AW,AH);
+  for(let i=0;i<6;i++){
+    const ang = i*Math.PI/3 + at*0.08;
+    const len = 68+12*Math.sin(at*0.7+i);
+    actx.beginPath(); actx.moveTo(ox,oy);
+    actx.lineTo(ox+len*Math.cos(ang), oy+len*Math.sin(ang));
+    actx.strokeStyle=`rgba(167,139,250,${(0.03+0.02*Math.sin(at+i)).toFixed(3)})`;
+    actx.lineWidth=0.4; actx.stroke();
+  }
+  [28,55,85].forEach((r,i)=>{
+    const cols=[[167,139,250],[96,165,250],[52,211,153]];
+    for(let w=0;w<3;w++){
+      const ph = at*(0.6+i*0.2)+w*Math.PI*2/3;
+      actx.beginPath(); actx.arc(ox,oy, r+3*Math.sin(ph), 0, Math.PI*2);
+      actx.strokeStyle=`rgba(${cols[i]},${(0.04+0.03*Math.sin(ph+1)).toFixed(3)})`;
+      actx.lineWidth=0.5+Math.sin(ph)*0.3; actx.stroke();
     }
   });
-
-  const quarks = [
-    {a:0,    r:6, rgb:[244,114,182]},
-    {a:2.09, r:5, rgb:[251,146,60]},
-    {a:4.19, r:6, rgb:[167,139,250]},
-  ];
-
-  function drawAtomFrame() {
-    actx.clearRect(0,0,AW,AH);
-
-    for(let i=0;i<6;i++){
-      const ang = i*Math.PI/3 + at*0.08;
-      const len = 68+12*Math.sin(at*0.7+i);
+  orbitals.forEach(o=>{
+    const [r,g,b]=o.rgb;
+    o.points.forEach(p=>{
+      p.angle += p.speed + p.drift*Math.sin(at+p.phase);
+      const pr = p.r*(1+0.08*Math.sin(at*1.3+p.phase+p.angle*3));
+      const a  = (p.alpha*(0.7+0.3*Math.sin(at*2.4+p.phase))).toFixed(3);
       actx.beginPath();
-      actx.moveTo(ox,oy);
-      actx.lineTo(ox+len*Math.cos(ang), oy+len*Math.sin(ang));
-      actx.strokeStyle=`rgba(167,139,250,${(0.03+0.02*Math.sin(at+i)).toFixed(3)})`;
-      actx.lineWidth=0.4; actx.stroke();
-    }
-
-    [28,55,85].forEach((r,i)=>{
-      const cols=[[167,139,250],[96,165,250],[52,211,153]];
-      for(let w=0;w<3;w++){
-        const ph = at*(0.6+i*0.2)+w*Math.PI*2/3;
-        actx.beginPath();
-        actx.arc(ox,oy, r+3*Math.sin(ph), 0, Math.PI*2);
-        actx.strokeStyle=`rgba(${cols[i]},${(0.04+0.03*Math.sin(ph+1)).toFixed(3)})`;
-        actx.lineWidth=0.5+Math.sin(ph)*0.3; actx.stroke();
-      }
+      actx.arc(ox+pr*Math.cos(p.angle), oy+pr*Math.sin(p.angle), p.size, 0, Math.PI*2);
+      actx.fillStyle=`rgba(${r},${g},${b},${a})`; actx.fill();
     });
-
-    orbitals.forEach(o=>{
-      const [r,g,b]=o.rgb;
-      o.points.forEach(p=>{
-        p.angle += p.speed + p.drift*Math.sin(at+p.phase);
-        const pr = p.r*(1+0.08*Math.sin(at*1.3+p.phase+p.angle*3));
-        const a  = (p.alpha*(0.7+0.3*Math.sin(at*2.4+p.phase))).toFixed(3);
-        actx.beginPath();
-        actx.arc(ox+pr*Math.cos(p.angle), oy+pr*Math.sin(p.angle), p.size, 0, Math.PI*2);
-        actx.fillStyle=`rgba(${r},${g},${b},${a})`; actx.fill();
-      });
-    });
-
-    const pulse = 1+0.06*Math.sin(at*2.1);
-    const R = 12*pulse;
-    const glo = actx.createRadialGradient(ox,oy,0,ox,oy,R*2.2);
-    glo.addColorStop(0,'rgba(167,139,250,0.18)');
-    glo.addColorStop(1,'rgba(0,0,0,0)');
-    actx.beginPath(); actx.arc(ox,oy,R*2.2,0,Math.PI*2);
-    actx.fillStyle=glo; actx.fill();
-
-    const gc = actx.createRadialGradient(ox-2,oy-2,1,ox,oy,R);
-    gc.addColorStop(0,'rgba(255,255,255,0.95)');
-    gc.addColorStop(0.3,'rgba(196,181,253,0.95)');
-    gc.addColorStop(0.7,'rgba(124,92,228,0.9)');
-    gc.addColorStop(1,'rgba(79,142,247,0.7)');
-    actx.beginPath(); actx.arc(ox,oy,R,0,Math.PI*2);
-    actx.fillStyle=gc; actx.fill();
-
-    quarks.forEach(q=>{
-      const qa = q.a + at*1.8;
-      const qx = ox+q.r*Math.cos(qa), qy = oy+q.r*Math.sin(qa);
-      actx.beginPath(); actx.moveTo(ox,oy); actx.lineTo(qx,qy);
-      actx.strokeStyle='rgba(255,255,255,0.12)'; actx.lineWidth=0.6; actx.stroke();
-      const qg = actx.createRadialGradient(qx,qy,0,qx,qy,3);
-      qg.addColorStop(0,`rgb(${q.rgb})`); qg.addColorStop(1,'rgba(0,0,0,0)');
-      actx.beginPath(); actx.arc(qx,qy,3,0,Math.PI*2);
-      actx.fillStyle=qg; actx.fill();
-    });
-
-    at += 0.016;
-    requestAnimationFrame(drawAtomFrame);
-  }
-  drawAtomFrame();
-
+  });
+  const pulse = 1+0.06*Math.sin(at*2.1);
+  const R = 12*pulse;
+  const glo = actx.createRadialGradient(ox,oy,0,ox,oy,R*2.2);
+  glo.addColorStop(0,'rgba(167,139,250,0.18)'); glo.addColorStop(1,'rgba(0,0,0,0)');
+  actx.beginPath(); actx.arc(ox,oy,R*2.2,0,Math.PI*2); actx.fillStyle=glo; actx.fill();
+  const gc = actx.createRadialGradient(ox-2,oy-2,1,ox,oy,R);
+  gc.addColorStop(0,'rgba(255,255,255,0.95)'); gc.addColorStop(0.3,'rgba(196,181,253,0.95)');
+  gc.addColorStop(0.7,'rgba(124,92,228,0.9)'); gc.addColorStop(1,'rgba(79,142,247,0.7)');
+  actx.beginPath(); actx.arc(ox,oy,R,0,Math.PI*2); actx.fillStyle=gc; actx.fill();
+  quarks.forEach(q=>{
+    const qa = q.a + at*1.8;
+    const qx = ox+q.r*Math.cos(qa), qy = oy+q.r*Math.sin(qa);
+    actx.beginPath(); actx.moveTo(ox,oy); actx.lineTo(qx,qy);
+    actx.strokeStyle='rgba(255,255,255,0.12)'; actx.lineWidth=0.6; actx.stroke();
+    const qg = actx.createRadialGradient(qx,qy,0,qx,qy,3);
+    qg.addColorStop(0,`rgb(${q.rgb})`); qg.addColorStop(1,'rgba(0,0,0,0)');
+    actx.beginPath(); actx.arc(qx,qy,3,0,Math.PI*2); actx.fillStyle=qg; actx.fill();
+  });
+  at += 0.016;
+  requestAnimationFrame(drawAtomFrame);
+}
+drawAtomFrame();
 
 /* ── Scroll reveal ── */
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); }
-  });
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
 }, { threshold: 0.1 });
 reveals.forEach(el => observer.observe(el));
 
-/* ── Smooth counter animation ── */
+/* ── Counter animation ── */
 function animateCount(el, target, suffix = '') {
   const duration = 1800;
   const start = performance.now();
@@ -801,10 +1163,9 @@ function animateCount(el, target, suffix = '') {
   };
   requestAnimationFrame(update);
 }
-
 const statNums = document.querySelectorAll('.stat-num');
-const statValues = [50, 1000, 1, 2];
-const statSuffixes = ['+', '+', '', ''];
+const statValues = [17, 18, 1100, 2];
+const statSuffixes = ['+', '+', '+', ''];
 const statObserver = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
     if (e.isIntersecting) {
